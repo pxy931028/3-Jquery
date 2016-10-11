@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		#list li{
+			float:left;
+			list-style:none;
+			border:1px solid #aaa;
+			width: 80px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;	
+			cursor: pointer;
+			background-color: #fff;
+		}
+		#list .active{
+			background-color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<img id="pic" src="images/0.jpg" alt="">
+	<ul id="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#list li").click(function(){
+			var i=$(this).index();				//	获取按钮的索引值
+			var src="images/"+i+".jpg" ;     	//	获取索引对象
+			$("#pic").attr("src",src);
+			// $(this).css("background-color","#f00").siblings().css("background-color","#fff")
+			$(this).addClass("active").siblings().removeClass("active");
+		})
+	</script>
+</body>
+</html>

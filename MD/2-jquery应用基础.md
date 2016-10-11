@@ -175,3 +175,64 @@ jquery是用Javascript代码写好的功能库，而jquery.min.js是jquery压缩
 </html>
 ```
 ### 五、选项卡制作
+#### 示例代码 [selector](../HTML/selector.html)
+单击选项卡切换到不同的内容中
+``` html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+			box-sizing:border-box;
+		}
+		.clearFix:before,.clearFix:after{
+			content:"";
+			display:block;
+			clear:both;
+		}
+		.list li{
+			float:left;
+			list-style:none;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			text-align:center;
+			border:1px solid #aaa;
+			cursor: pointer;
+		}
+		.content div{
+			width: 300px;
+			height: 300px;
+			border:1px solid red;
+			display:none;
+		}
+		.content .active{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<ul class="list clearFix">
+		<li>选项一</li>
+		<li>选项二</li>
+		<li>选项三</li>
+	</ul>
+	<div class="content">
+		<div class="active"><h1>内容一</h1></div>
+		<div><h1>内容二</h1></div>
+		<div><h1>内容三</h1></div>
+	</div>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".list li").click(function(){
+			var i=$(this).index();
+			$(".content div").eq(i).addClass("active").siblings().removeClass("active");
+		})
+	</script>
+</body>
+</html>
+```

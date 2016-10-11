@@ -11,7 +11,7 @@
 + $(this) 			   把另一个对象变成jquery对象
 
 #### 三、jquery事件
-    jQuery 事件处理方法是 jQuery 中的核心函数。事件处理程序指的是当 HTML 中发生某些事件时所调用的方法。
+ jQuery 事件处理方法是 jQuery 中的核心函数。事件处理程序指的是当 HTML 中发生某些事件时所调用的方法。
 
 + $(document).ready(function) 		将函数绑定到文档的就绪事件（当文档完成加载时） 
 + $(selector).click(function) 		触发或将函数绑定到被选元素的点击事件 

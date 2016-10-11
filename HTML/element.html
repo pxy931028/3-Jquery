@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#myform input{
+		margin-left:50px;
+	}
+    .box div{
+       	width: 50px;
+       	height: 50px;
+       	border:1px solid red;
+       	float:left;
+       	margin-left:30px;
+    }
+	</style>
+</head>
+<body>
+	<form id="myform" action="">
+		<input type="button" value="1">
+		<input type="button" value="2">
+		<input type="button" value="3">
+	</form>
+	<div class="box">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<script src="script/jquery.js"></script>    
+   <script>
+        $("#myform input").click(function(){
+            var index = $(this).index();
+        	$(".box div").eq(index).css("background-color","red").siblings().css("background-color","#fff");
+        })
+   </script>
+</body>
+</html>

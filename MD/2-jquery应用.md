@@ -77,9 +77,12 @@ jquery是用Javascript代码写好的功能库，而jquery.min.js是jquery压缩
 </html>
 ```
 ### 四、图片切换
-单击按钮可以切换到对应的图片并且按钮变为红色
++ index() 		返回指定元素相对于其他指定元素的 index 位置(找到元素的索引)
++ eq() 			将匹配元素集缩减值指定 index 上的一个(通过索引找元素)
 
 #### 示例代码 [picture](../HTML/picture.html)
+单击按钮可以切换到对应的图片并且按钮变为红色
+
 ``` html
 <!DOCTYPE html>
 <html lang="en">
@@ -129,3 +132,46 @@ jquery是用Javascript代码写好的功能库，而jquery.min.js是jquery压缩
 </body>
 </html>
 ```
+#### 示例代码 [element](../HTML/element.html)
+通过索引找元素
+``` html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#myform input{
+		margin-left:50px;
+	}
+    .box div{
+       	width: 50px;
+       	height: 50px;
+       	border:1px solid red;
+       	float:left;
+       	margin-left:30px;
+    }
+	</style>
+</head>
+<body>
+	<form id="myform" action="">
+		<input type="button" value="1">
+		<input type="button" value="2">
+		<input type="button" value="3">
+	</form>
+	<div class="box">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<script src="script/jquery.js"></script>    
+   <script>
+        $("#myform input").click(function(){
+            var index = $(this).index();
+        	$(".box div").eq(index).css("background-color","red").siblings().css("background-color","#fff");
+        })
+   </script>
+</body>
+</html>
+```
+### 五、选项卡制作

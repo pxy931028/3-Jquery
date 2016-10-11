@@ -23,6 +23,12 @@
 + $(selector).mouseenter(function) 	鼠标移动到元素上方时触发事件
 + $(selector).mouseleave(function) 	鼠标离开元素时触发事件
 
+##### jquery事件的坐标属性
+相对于整个文档中的坐标（文档绝对坐标） 
++ event.pageX 		相对于文档左边缘的鼠标位置。 
++ event.pageY 		相对于文档上边缘的鼠标位置。 
+
+
 #### 四、jquery方法
 ##### 属性操作
 + addClass() 		向匹配的元素添加指定的类名。 
@@ -63,6 +69,19 @@
 
 
 #####  动画效果
++ hide() 		用于隐藏 HTML 元素
++ show() 		用于显示 HTML 元素
++ toggle() 		可以在 hide() 和 show() 方法之间进行切换
++ fadeIn() 		用于淡入已隐藏的元素
++ fadeOut() 	用于淡出可见元素
++ fadeToggle() 	可以在 fadeIn() 与 fadeOut() 方法之间进行切换
++ fadeTo() 		允许渐变为给定的不透明度（值介于 0 与 1 之间）
++ slideDown() 	用于向下滑动元素
++ slideUp() 	用于向上滑动元素
++ slideToggle() 可以在 slideDown() 与 slideUp() 方法之间进行切换
++ animate() 	用于创建自定义动画
++ stop() 		用于在动画或效果完成前对它们进行停止
+
 
 
 

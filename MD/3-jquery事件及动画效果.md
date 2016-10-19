@@ -69,4 +69,79 @@
 </body>
 </html>
 ```
-### 二、鼠标移入移出事件
+### 二、jquery事件
+
+#### 鼠标移入移出事件
+##### 示例代码 [mouse](../HTML/mouse.html)
+``` html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.box{
+			width: 300px;
+			height: 300px;
+			background-color: #f00;
+		}
+		.active{
+			background-color: #00f;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".box").mouseenter(function(){
+			$(this).addClass("active");
+		});
+		$(".box").mouseleave(function(){
+			$(this).removeClass("active");
+		});
+	</script>
+</body>
+</html>
+```
+##### mouseover与mouseenter的区别
+mouseenter() 方法 只有在鼠标指针经过被选元素时(不包括鼠标指针经过任何子元素)，才会触发 mouseenter 事件。mouseover ()方法在鼠标指针经过被选元素或者经过任何子元素时，都会触发 mouseover 。mouseleave事件 只有在鼠标指针离开被选元素时，才会触发 mouseleave 事件 。mouseout不论鼠标指针离开被选元素还是任何子元素，都会触发 mouseout 事件。
+
+ 示例代码 [区别](../HTML/over.html)
+ ``` html
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>不论鼠标指针穿过被选元素或其子元素，都会触发 mouseover 事件。</p>
+	<p>只有在鼠标指针穿过被选元素时，才会触发 mouseenter 事件。</p>
+	<div class="over" style="background-color:lightgray;padding:20px;width:40%;float:left">
+		<h2 style="background-color:white;">被触发的 Mouseover 事件：<span></span></h2>
+	</div>
+	<div class="enter" style="background-color:lightgray;padding:20px;width:40%;float:right">
+		<h2 style="background-color:white;">被触发的 Mouseenter 事件：<span></span></h2>
+	</div>
+	<script type="text/javascript" src="script/jquery.js"></script>
+	<script type="text/javascript">
+		x=0;
+		y=0;
+		$(document).ready(function(){
+		  $("div.over").mouseover(function(){
+		   	 	$(".over span").text(x+=1);
+		  });
+		  $("div.enter").mouseenter(function(){
+		    $(".enter span").text(y+=1);
+		  });
+		});
+	</script>
+</body>
+</html>
+ ```
+ #### 鼠标移入移出事件
